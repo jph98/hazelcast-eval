@@ -5,7 +5,7 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.froyo.hazelcast.client.NavigatorEventReader;
+import com.froyo.hazelcast.client.NvEventReader;
 import com.froyo.hazelcast.client.RenameEventPublisherClient;
 import com.froyo.hazelcast.common.FileEvents;
 import com.hazelcast.client.HazelcastClient;
@@ -27,7 +27,7 @@ public class PublishReadTest {
         client.shutdown();        
         assertThat(queue.size(), equalTo(3));
         
-        NavigatorEventReader reader = new NavigatorEventReader();
+        NvEventReader reader = new NvEventReader();
         reader.readMessages();
         reader.shutdown();
         
